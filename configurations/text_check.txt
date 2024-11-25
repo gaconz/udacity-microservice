@@ -1,0 +1,5 @@
+## To check node is not ready
+kubectl describe node ip-192-168-57-79.ec2.internal
+
+Quy trình 
+Create cluster, node group.

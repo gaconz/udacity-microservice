@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reverseproxy
+  labels:
+    app: reverseproxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reverseproxy
+  template:
+    metadata:
+      labels:
+        app: reverseproxy
+    spec:
+      containers:
+      - name: reverseproxy
+        image: letienlocvn/udagram-reverseproxy:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080  # Adjust the port if necessary
+        env:
+        - name: AWS_BUCKET
+          valueFrom:
+            configMapKeyRef:
+              name: my-config
+              key: AWS_BUCKET
+        - name: AWS_REGION
+          valueFrom:
+            configMapKeyRef:
+              name: my-config
+              key: AWS_REGION
+        - name: AWS_PROFILE
+          valueFrom:
+            configMapKeyRef:
+              name: my-config
+              key: AWS_PROFILE
+      restartPolicy: Always

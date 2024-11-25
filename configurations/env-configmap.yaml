@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+data:
+  AWS_BUCKET: "arn:aws:s3:::udacity-s3-dev"
+  AWS_REGION: "us-east-1"
+  AWS_PROFILE: "arn:aws:iam::749338108763:user/loclt7-course2-udagram"
+  POSTGRES_HOST: "postgres.cpilnpwxuote.us-east-1.rds.amazonaws.com"
+  POSTGRES_DB: "postgres_db"
+  URL: "http://localhost:8100"
