@@ -1,3 +1,6 @@
+console.log(process.env.AWS_BUCKET)
+console.log(process.env.POSTGRES_DB)
+console.log(process.env.AWS_REGION)
 export const config = {
   'username': process.env.POSTGRES_USERNAME,
   'password': process.env.POSTGRES_PASSWORD,
